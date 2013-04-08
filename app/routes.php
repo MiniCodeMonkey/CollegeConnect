@@ -18,6 +18,7 @@ Route::get('/', function()
 
 Route::get('/gitpush', function()
 {
+	$stdout = $stderr = NULL;
 	shell_exec("/bin/bash /home/codemonkey/collegeconnect-push.sh", $stdout, $stderr);
 	Log::info(print_r($stdout, true) . PHP_EOL . print_r($stderr, true));
 
