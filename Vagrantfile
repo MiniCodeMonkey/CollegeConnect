@@ -24,8 +24,8 @@ Vagrant::Config.run do |config|
   config.vm.customize ["modifyvm", :id, "--memory", 512]
 
   # Define hostname to be used with Hostmaster
-  config.vm.host_name = "dirtweb.dev"
-  config.hosts.name = "dirtweb.dev"
+  config.vm.host_name = "collegeconnect.local"
+  config.hosts.name = "collegeconnect.local"
 
   # Use hostonly network with a static IP Address
   config.vm.network :hostonly, "172.90.90.90"
@@ -36,7 +36,7 @@ Vagrant::Config.run do |config|
 
   # Enable and configure chef solo
   config.vm.provision :chef_solo do |chef|
-    chef.cookbooks_path = ["~/bin/dirt/cookbooks"]
+    chef.cookbooks_path = ["cookbooks"]
     chef.add_recipe "apt"
     chef.add_recipe "openssl"
     chef.add_recipe "apache2"
@@ -51,12 +51,12 @@ Vagrant::Config.run do |config|
     chef.add_recipe "misc::db"
     chef.json = {
       :misc => {
-        :name           => "dirtweb",
-        :db_user        => "dirtweb",
-        :db_pass        => "nFgx0RlgDGL4",
-        :db_name        => "dirtweb",
-        :server_name    => "dirtweb.dev",
-        :server_aliases => "*.dirtweb.dev",
+        :name           => "collegeconnect",
+        :db_user        => "collegeconnect",
+        :db_pass        => "YDt9NrerXcYw",
+        :db_name        => "collegeconnect",
+        :server_name    => "collegeconnect.local",
+        :server_aliases => "*.collegeconnect.local",
         :docroot        => "/home/vagrant/public",
       },
       :mysql => {
