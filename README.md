@@ -22,15 +22,16 @@ Update submodules
 
 	$ git submodule update --init
 
-Install dependencies with Composer
-
-    $ composer install
-
 ## Local development
 
 A Vagrantfile is included for local development, to get started developing locally, just run:
 
 	$ vagrant up
+
+When the Vagrant VM is first started, it is necessary to log in and install/update the composer dependencies.
+
+	$ vagrant ssh
+    $ composer install
 
 
 ## Development stack
