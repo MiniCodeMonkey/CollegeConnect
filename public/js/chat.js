@@ -20,7 +20,7 @@ $(function () {
 		}
 
 		var remote = (userType == 'AMBASSADOR') ? 'Student' : 'College Ambassador';
-		var name = (data.from == myId) ? 'Me' : remote;
+		var name = (data.from == myId || typeof(data.from) == 'undefined') ? 'Me' : remote;
 		var p = $('<p>').html('<strong>'+ name +'</strong> ');
 		p.append(data.message);
 		$(".chat-messages").append(p);
