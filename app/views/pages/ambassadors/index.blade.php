@@ -1,4 +1,4 @@
-@extends('layouts/main')
+@extends('layouts/subpage')
 
 @section('content')
 <div id="welcome-ambassador">
