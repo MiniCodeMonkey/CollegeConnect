@@ -71,7 +71,9 @@ header 					{ background:#16528E; height:100px; }
 	
 	.chat-messages 				{ border-bottom:1px solid #CCC; padding:20px; }
 	.other-bubble 				{ text-align:left; }
+		.other-bubble .face-bubble 		{ float:left; margin-right:10px; }
 	.my-bubble 					{ text-align:right; }
+		.my-bubble .face-bubble 		{ float:right; margin-left:10px; }
 
 	.chat-compose 				{ padding:5px; }
 
