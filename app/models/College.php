@@ -8,5 +8,10 @@ class College extends Eloquent {
 	 * @var string
 	 */
 	protected $table = 'colleges';
+	public $timestamps = FALSE;
 
+	public static function getByName($name)
+	{
+		return College::where('name', $name)->first();
+	}
 }
