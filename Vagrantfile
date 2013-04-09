@@ -49,6 +49,7 @@ Vagrant::Config.run do |config|
     chef.add_recipe "misc::packages"
     chef.add_recipe "misc::vhost"
     chef.add_recipe "misc::db"
+    chef.add_recipe "nodejs"
     chef.json = {
       :misc => {
         :name           => "collegeconnect",

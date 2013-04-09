@@ -8,8 +8,7 @@
 * [Vagrant](http://vagrantup.com)
 * [vagrant-hostmaster](https://github.com/mosaicxm/vagrant-hostmaster)
 * [git](http://git-scm.com)
-* [PHP (cli)](http://php.net)
-* [Composer](http://getcomposer.org/download/)
+
 
 ## Installation
 
@@ -21,6 +20,7 @@ Clone this repository
 Update submodules
 
 	$ git submodule update --init
+
 
 ## Local development
 
@@ -46,6 +46,7 @@ When the Vagrant VM is first started, it is necessary to log in via SSH and inst
 
 * Development: http://collegeconnect.local
 * Production: http://collegeconnect.codemonkey.io
+
 
 ## Pushing to production
 

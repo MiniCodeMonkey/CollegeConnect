@@ -17,6 +17,11 @@ end
   package a_package
 end
 
+# Install node.js
+%w{  }.each do |a_package|
+  package a_package
+end
+
 # Fix deprecated comments in PHP ini files by replacing '#' with ';'
 bash "fix-phpcomments" do
   code "find /etc/php5/cli/conf.d/ -name '*.ini' -exec sed -i -re 's/^(\\s*)#(.*)/\\1;\\2/g' {} \\;"
