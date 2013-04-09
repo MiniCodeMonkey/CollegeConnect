@@ -6,7 +6,3 @@
     	<div id="map-test">hello</div>
     </div>
 @stop
-
-
-
-<a href="{{ $url }}">My URL</a>
