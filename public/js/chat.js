@@ -20,7 +20,7 @@ $(function () {
 		}
 
 		var remote = (userType == 'AMBASSADOR') ? 'Student' : 'College Ambassador';
-		var name = (data.user_id == myId) ? 'Me' : remote;
+		var name = (data.from == myId) ? 'Me' : remote;
 		var p = $('<p>').html('<strong>'+ name +'</strong> ');
 		p.append(data.message);
 		$(".chat-messages").append(p);
@@ -31,7 +31,7 @@ $(function () {
 	socket.on('newstudent', function (data) {
 		if (!inSession) {
 			inSession = true;
-			
+
 			$("#loading").hide();
 
 			// New student connected
