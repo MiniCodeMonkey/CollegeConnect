@@ -7,7 +7,20 @@
 ========================================================== */
 header 			{ background:#DC006B; height:100px; }
 	
-	#logo		{ color:#FFF; font-family:'Sintony'; }
+	/* logo
+	------------------------------ */
+	#logo				{ color:#FFF; font-family:'Sintony'; font-size:70px; padding-top:13px; }
+	#logo i 			{ color:#750039; text-shadow:0 1px 0 #FF52A6; }
+	#logo:hover			{ text-decoration:none; }
+
+	/* main nav
+	------------------------------ */
+	#main-nav 			{ padding-top:34px; }
+	#main-nav ul 		{ list-style:none; }
+	#main-nav li 		{  }
+	#main-nav a 		{ color:#FFF; margin-left:30px; }
+	#main-nav i 		{ color:#035D91; margin-right:15px; }
+	#main-nav a:hover 	{  }
 
 /* HEADER
 ========================================================== */
