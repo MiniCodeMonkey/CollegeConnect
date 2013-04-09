@@ -15,7 +15,7 @@ class LoginController extends BaseController {
 		));
 
 		$fbUserProfile = $facebook->api('/me');
-			
+
 		$user = User::fromFacebookId($fbUserProfile['id']);
 
 		if (!$user) {
@@ -44,14 +44,34 @@ class LoginController extends BaseController {
 	public function postIndex()
 	{
 		$rules = array(
-			'first_name' => array('required', 'alpha', 'max:255')
+			'college' => array('required')
 		);
 
 		$validator = Validator::make(Input::all(), $rules);
 		
 		if ($validator->fails())
 		{
-			return Redirect::to('login/amb')->withInput()->withErrors($validator);
+			return Redirect::to('login')->withInput()->withErrors($validator);
+		}
+		else
+		{
+			$college = Input::get('college');
+
+			//insert into database
+			$facebook = new Facebook(array(
+				'appId'  => Config::get('facebook.app_id'),
+				'secret' => Config::get('facebook.app_secret')
+			));
+
+			$profile = $facebook->api('/me');
+			$facebook_id = $profile['id'];
+
+			//insert into database
+
+			//redirect to chat page
+
+
+			//boom!
 		}
 	
 	}
