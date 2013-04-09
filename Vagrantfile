@@ -57,7 +57,7 @@ Vagrant::Config.run do |config|
         :db_name        => "collegeconnect",
         :server_name    => "collegeconnect.local",
         :server_aliases => "*.collegeconnect.local",
-        :docroot        => "/home/vagrant/public",
+        :docroot        => "/home/vagrant/public/public",
       },
       :mysql => {
         :server_root_password   => 'root',
