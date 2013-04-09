@@ -11,6 +11,10 @@ Route::controller('register', 'RegisterController');
 // Colleges controller
 Route::controller('colleges', 'CollegesController');
 
+// College controller
+Route::get('college/{id}', 'CollegeController@showCollege')
+	->where('id', '[0-9]+');
+
 // Logout
 Route::get('/logout', 'LoginController@getLogout');
 

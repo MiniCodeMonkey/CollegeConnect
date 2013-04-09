@@ -31,5 +31,11 @@
 <script src="http://{{ $_SERVER['SERVER_NAME'] }}:1337/socket.io/socket.io.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
-<script src="/js/core.js"></script>
-<script src="/js/chat.js"></script>
+
+@if (count(Request::segments()) == 0)
+	<script src="/js/core.js"></script>
+@endif
+
+@if (Request::segment(1) == 'college')
+	<script src="/js/chat.js"></script>
+@endif
