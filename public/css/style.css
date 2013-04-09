@@ -15,7 +15,7 @@ header 					{ background:#16528E; height:100px; }
 	
 	/* logo
 	------------------------------ */
-	#logo				{ color:#FFF; font-family:'Sintony'; font-size:70px; padding-top:13px; }
+	#logo				{ color:#FFF; font-family:'Sintony'; font-size:50px; padding-top:20px; }
 	#logo i 			{ color:#04305C; text-shadow:0 1px 0 #3184D6; }
 	#logo:hover			{ text-decoration:none; }
 
@@ -46,9 +46,9 @@ header 					{ background:#16528E; height:100px; }
 
 	/* welcome hero
 	------------------------------ */
-	#welcome-msg 				{ left:140px; position:absolute; top:300px; z-index:9999; }
-	#welcome-msg h1 			{ color:#DC006B; font-size:50px; }
-	#welcome-msg h2 			{ color:#16528E; margin-bottom:30px; }
+	#welcome-msg 				{ left:140px; position:absolute; top:20%; z-index:9999; }
+	#welcome-msg h1 			{ color:#DC006B; font-size:30px; }
+	#welcome-msg h2 			{ color:#16528E; font-size:20px; margin-bottom:30px; }
 	#welcome-msg p 				{ color:#FFF; font-size:18px; margin-bottom:30px; }
 
 	#welcome-msg a 				{ display:block; font-size:24px; margin-bottom:30px; width:50%; }
@@ -65,11 +65,14 @@ header 					{ background:#16528E; height:100px; }
 
 /* CHAT
 ========================================================== */
-.chat-box 						{ background:#FFF; border:1px solid #CCC; padding:20px;
+.chat-box 						{ background:#FFF; border:1px solid #CCC; padding:0 20px 0 20px;
 	border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; 
 	box-shadow:0 3px 0 #BBB; -moz-box-shadow:0 3px 0 #BBB; -webkit-box-shadow:0 3px 0 #BBB; }
 	
+	.chat-header h3 			{ color:#DC006B; }
 	.chat-messages 				{ border-bottom:1px solid #CCC; padding:20px; }
+		.chat-bubble 			{ margin-bottom:10px; }
+		.chat-message 			{ padding-top:5px; }
 	.other-bubble 				{ text-align:left; }
 		.other-bubble .face-bubble 		{ float:left; margin-right:10px; }
 	.my-bubble 					{ text-align:right; }
@@ -84,3 +87,27 @@ header 					{ background:#16528E; height:100px; }
 #map-canvas label { 
   width: auto; display:inline; 
 } 
+
+/* =============================================================================================
+ * =RESPONSIVE
+================================================================================================ */
+/* Large Desktop */
+@media (min-width: 1200px) {
+
+}
+
+/* Small Desktop Screens + Tablets */
+/*@media (min-width: 769px) and (max-width: 979px) {
+
+}*/
+
+/* Phone Landscape and Smaller */
+@media (max-width: 790px) {
+	#welcome-msg 		{ top:20%; }
+	#welcome-msg h1 	{ font-size:30px; }
+}
+
+/* Phone Portrait */
+@media (max-width:480px) {
+
+}
