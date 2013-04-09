@@ -6,6 +6,11 @@
 	<h1>Welcome College Ambassador {{ $user->name }}!</h1>
 	<h3>Which school would you like to be an Ambassador for?</h3>
 
+	{{ $errors->first('college', '<div class="alert alert-error">
+              <button type="button" class="close" data-dismiss="alert">×</button>
+              <strong>Oh snap!</strong> You must select a college!
+            </div>') }}
+
 	{{ Form::open(array('url' => '/login', 'class' => '', 'id' => 'ambassador-form')) }}
 		 <div class="control-group {{ $errors->first('college', 'error') }}">
 				@if (isset($user_profile['education']) && !empty($user_profile['education']))
@@ -26,7 +31,7 @@
 							endif;
 						?>
 							<div class="controls">
-								<label class="radio">{{ Form::radio('college', 1); }} {{ $school_name.$study.$school_year }}</label>
+								<label class="radio">{{ Form::radio('college', $school_name); }} {{ $school_name.$study.$school_year }}</label>
 							</div>
 
 						@endif
