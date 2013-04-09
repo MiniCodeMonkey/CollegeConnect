@@ -5,7 +5,11 @@
 	Blue 	: #16528E;
 */
 
-/* BASE 
+/* BASE
+========================================================== */
+body 				{ background:#EFEFEF; }
+
+/* HEADER 
 ========================================================== */
 header 			{ background:#16528E; height:100px; }
 	
@@ -23,9 +27,6 @@ header 			{ background:#16528E; height:100px; }
 	#main-nav a 		{ color:#FFF; margin-left:30px; }
 	#main-nav i 		{ color:#035D91; margin-right:15px; }
 	#main-nav a:hover 	{  }
-
-/* HEADER
-========================================================== */
 
 /* FOOTER 
 ========================================================== */
