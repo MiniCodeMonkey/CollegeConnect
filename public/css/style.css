@@ -56,11 +56,28 @@ header 			{ background:#16528E; height:100px; }
 /* SIGN UP 
 ========================================================== */
 
+/* AMBASSADOR
+========================================================== */
+#welcome-ambassador 			{  }
 
+	#ambassador-loading 		{ display:block; font-size:80px; text-align:center; }
+
+/* CHAT
+========================================================== */
+.chat-box 						{ border:1px solid #CCC; padding:20px;
+	border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; 
+	box-shadow:0 3px 0 #BBB; -moz-box-shadow:0 3px 0 #BBB; -webkit-box-shadow:0 3px 0 #BBB; }
+	
+	.chat-messages 				{ border-bottom:1px solid #CCC; padding:20px; }
+	.other-bubble 				{ text-align:left; }
+	.my-bubble 					{ text-align:right; }
+
+	.chat-compose 				{ padding:5px; }
+x
 #map-canvas img { 
   max-width: none;
 }
 
 #map-canvas label { 
   width: auto; display:inline; 
-} 
+} x
