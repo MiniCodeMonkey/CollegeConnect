@@ -8,7 +8,7 @@ $(function () {
 	});
 
 	socket.on('newmessage', function (data) {
-		var p = $('<p>').html('<strong>' + data.from + '</strong> ' + data.message);
+		var p = $('<p>').html(data.message);
 		$(".chat-messages").append(p);
 
 		console.log('newmessage', data);
