@@ -9,8 +9,8 @@
 		<p>Find your college and get familiar by talking to its ambassadors.</p>	
 		<p>They'll help with your college planning, questions, and greatest fears.</p>
 		
-		<a class="btn btn-large btn-primary" href="#">Start Talking to an Ambassador</a>
-		<a id="welcome-ambassador-link" href="#">Be an Ambassador</a>
+		<a class="btn btn-large btn-primary" href="{{ URL::to('/register/student') }}">Start Talking to an Ambassador</a>
+		<a id="welcome-ambassador-link" href="{{ URL::to('/register/ambassador') }}">Be an Ambassador</a>
 	</div>	
 </div>
 @stop

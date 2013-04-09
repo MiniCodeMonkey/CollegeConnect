@@ -2,7 +2,7 @@
 
 @section('content')
 <div id="welcome-search">
-	<form class="form-horizontal">
+	<form class="form-horizontal" action="">
 		<input type="text" class="input-medium search-query">
 		<button type="submit" class="btn">Search</button>
 	</form>
