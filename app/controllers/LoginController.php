@@ -31,7 +31,9 @@ class LoginController extends BaseController {
 
 		// If user is ambassador, make sure that they have selected their college
 		if ($user->user_type == 'AMBASSADOR' && is_null($user->college_id)) {
-			return Redirect::to('/login/amb');
+			return View::make('pages.login.register_ambassador')
+				->with('user', $user)
+				->with('user_profile', $fbUserProfile);
 		}
 
 		// We are authenticated!
@@ -39,36 +41,19 @@ class LoginController extends BaseController {
 		return Redirect::to('/');
 	}
 
-	public function getAmb()
+	public function postIndex()
 	{
-		$user = Auth::user();
-		if ($user && $user->user_type == 'AMBASSADOR' && is_null($user->college_id)) {
-			return View::make('pages.login.register_ambassador');
-		} else {
-			return Redirect::to('/');
-		}
-	}
+		$rules = array(
+			'first_name' => array('required', 'alpha', 'max:255')
+		);
 
-	public function postAmb()
-	{
-		$user = Auth::user();
-		if ($user && $user->user_type == 'AMBASSADOR' && is_null($user->college_id)) {
-			$rules = array(
-				'first_name' => array('required', 'alpha', 'max:255')
-			);
-
-			$validator = Validator::make(Input::all(), $rules);
-			
-			if ($validator->fails())
-			{
-				if (Request::ajax())
-					return Response::json($validator->messages());
-				else
-					return Redirect::to('login/amb')->withInput()->withErrors($validator);
-			}
-		} else {
-			return Redirect::to('/');
+		$validator = Validator::make(Input::all(), $rules);
+		
+		if ($validator->fails())
+		{
+			return Redirect::to('login/amb')->withInput()->withErrors($validator);
 		}
+	
 	}
 
 	/**
