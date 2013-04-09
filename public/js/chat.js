@@ -24,11 +24,11 @@ $(function () {
 		}
 	});
 
-	$(".chatform").submit(function () {
+	$(".chatform .btn").click(function () {
 		socket.emit('sendmessage', {
-			message: $(this).find('input').val()
+			message: $(this).parent().find('input').val()
 		});
-		$(this).find('input').val('');
+		$(this).parent().find('input').val('');
 
 		return false;
 	});
