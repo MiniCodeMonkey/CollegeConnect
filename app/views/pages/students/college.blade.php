@@ -34,7 +34,7 @@
 		</div>-->
 	</div>
 	<div class="chat-compose">
-		<form class="horizontal" action="chat" method="post" class="chatform">
+		<form class="horizontal chatform" action="chat" method="post">
 			<input type="text" class="input-large">
 			<button type="submit" class="btn">Send</button>
 		</form>

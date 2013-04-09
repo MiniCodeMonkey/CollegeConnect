@@ -9,7 +9,7 @@ $(function () {
 
 	socket.on('newmessage', function (data) {
 		var p = $('<p>').html('<strong>' + data.from + '</strong> ' + data.message);
-		$("#chatlog").append(p);
+		$(".chat-messages").append(p);
 
 		console.log('newmessage', data);
 	});
@@ -22,22 +22,22 @@ $(function () {
 			$('#ambassador-chat').removeClass('hide');
 			$('#ambassador-chat').attr('data-roomid', data.room_id);
 
-			$(".chatform .btn").click(function () {
+			$(".chatform").submit(function () {
 				socket.emit('sendmessage', {
-					message: $(this).parent().find('input').val()
+					message: $(this).find('input').val()
 				});
-				$(this).parent().find('input').val('');
+				$(this).find('input').val('');
 
 				return false;
 			});
 		}
 	});
 
-	$(".chatform .btn").click(function () {
+	$(".chatform").submit(function () {
 		socket.emit('sendmessage', {
-			message: $(this).parent().find('input').val()
+			message: $(this).find('input').val()
 		});
-		$(this).parent().find('input').val('');
+		$(this).find('input').val('');
 
 		return false;
 	});
