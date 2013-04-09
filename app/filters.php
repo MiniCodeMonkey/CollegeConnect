@@ -56,16 +56,6 @@ Route::filter('auth.fb', function()
 	if ($user) {
 		try {
 			$profile = $facebook->api('/me');
-
-			$user_profile = array(
-				'id' => $profile->id,
-				'name' => $profile->name,
-				'first_name' => $profile->first_name,
-				'last_name' => $profile->last_name,
-				'username' => $profile->username
-			);
-			//update to database
-
 		} catch (FacebookApiException $e) {
 			$user = FALSE;
 		}
@@ -73,7 +63,11 @@ Route::filter('auth.fb', function()
 
 	if (!$user)
 	{
-		return Redirect::route('login');
+		$params = array(
+			'scope' => 'publish_actions,user_location,user_education_history',
+			'redirect_uri' => URL::to('/login')
+		);
+		return Redirect::to($facebook->getLoginUrl($params));
 	}
 
 });
