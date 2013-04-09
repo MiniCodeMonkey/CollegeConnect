@@ -8,6 +8,14 @@ $(function () {
 	});
 
 	socket.on('newmessage', function (data) {
+		if (!inSession) {
+			inSession = true;
+
+			// New student connected
+			$('#ambassador-chat').removeClass('hide');
+			$('#ambassador-chat').attr('data-roomid', data.room_id);
+		}
+		
 		var p = $('<p>').html(data.message);
 		$(".chat-messages").append(p);
 
