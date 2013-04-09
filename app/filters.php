@@ -55,20 +55,25 @@ Route::filter('auth.fb', function()
 
 	if ($user) {
 		try {
-			$user_profile = $facebook->api('/me');
+			$profile = $facebook->api('/me');
 
-			var_dump($user_profile);
-			exit;
+			$user_profile = array(
+				'id' => $profile->id,
+				'name' => $profile->name,
+				'first_name' => $profile->first_name,
+				'last_name' => $profile->last_name,
+				'username' => $profile->username
+			);
+			//update to database
 
 		} catch (FacebookApiException $e) {
-			error_log($e);
 			$user = FALSE;
 		}
 	}
 
 	if (!$user)
 	{
-		Redirect::route('login');
+		return Redirect::route('login');
 	}
 
 });

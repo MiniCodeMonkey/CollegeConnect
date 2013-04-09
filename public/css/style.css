@@ -31,7 +31,6 @@ header 			{ background:#DC006B; height:100px; }
 /* HOME 
 ========================================================== */
 #map-canvas 	{ min-height:500px; position:relative; width:100%; }
-	#map-test 	{ background:#FFF; position:absolute; }
 
 /* SIGN UP 
 ========================================================== */

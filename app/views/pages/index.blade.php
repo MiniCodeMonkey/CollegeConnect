@@ -5,8 +5,5 @@
     	
     	<div id="map-test">hello</div>
     </div>
+	<a href="#">My URL</a>
 @stop
-
-
-
-<a href="#">My URL</a>
