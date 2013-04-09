@@ -8,6 +8,9 @@ Route::controller('login', 'LoginController');
 // Register controller
 Route::controller('register', 'RegisterController');
 
+// Colleges controller
+Route::controller('colleges', 'CollegesController');
+
 // Logout
 Route::get('/logout', 'LoginController@getLogout');
 
