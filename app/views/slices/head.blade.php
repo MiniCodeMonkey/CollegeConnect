@@ -24,6 +24,8 @@
 <link rel="stylesheet" href="/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/style.css">
 
+	<link rel='stylesheet'  href='http://fonts.googleapis.com/css?family=Sintony:400,700'>
+
 <!-- js -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
