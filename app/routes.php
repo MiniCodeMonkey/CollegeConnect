@@ -2,7 +2,33 @@
 
 	Route::get('/', function()
 	{
-		return View::make('pages.index');
+
+		$facebook = new Facebook(array(
+		  'appId'  => Config::get('facebook.app_id'),
+		  'secret' => Config::get('facebook.app_secret'),
+		));
+
+		$user = $facebook->getUser();
+
+		if ($user) {
+		  try {
+		    // Proceed knowing you have a logged in user who's authenticated.
+		    $user_profile = $facebook->api('/me');
+		  } catch (FacebookApiException $e) {
+		    error_log($e);
+		    $user = null;
+		  }
+		}
+
+		if ($user) {
+		  $url = $facebook->getLogoutUrl();
+		} else {
+		  $url = $facebook->getLoginUrl();
+		}
+
+
+		return View::make('pages.index')
+			->with('url', $url);
 	});
 
 	
