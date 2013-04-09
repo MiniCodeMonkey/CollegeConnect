@@ -1,12 +1,7 @@
-var socket;
+var socket = io.connect('http://'+ window.location.hostname +':1337');
 var userType;
 
 $(function () {
-	/*$("#ambassadorbtn").hide();
-	$("#studentbtn").hide();
-	$("#chatform").hide();
-
-	socket = io.connect('http://'+ window.location.hostname +':1337');
 	socket.on('connect', function (data) {
 		$("#ambassadorbtn").show();
 		$("#studentbtn").show();
@@ -46,5 +41,24 @@ $(function () {
 		$('#chattext').val('');
 
 		return false;
-	});*/
+	});
 });
+
+function initializeNewRoom(roomId, userId, collegeId)
+{
+	socket.emit('subscribe', {
+		user_id: userId,
+		room_id: roomId,
+		school_id: collegeId
+	});
+	$("#chatform").show();
+	$("#loading").hide();
+}
+
+function createRoomId()
+{
+	'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+	    var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+	    return v.toString(16);
+	});
+}
