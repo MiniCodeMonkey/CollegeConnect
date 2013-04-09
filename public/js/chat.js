@@ -3,9 +3,6 @@ var userType;
 
 $(function () {
 	socket.on('connect', function (data) {
-		$("#ambassadorbtn").show();
-		$("#studentbtn").show();
-
 		console.log('connect', data);
 	});
 
@@ -16,22 +13,13 @@ $(function () {
 		console.log('newmessage', data);
 	});
 
-	$("#ambassadorbtn").click(function () {
-		userType = 'ambassador';
-		socket.emit('subscribe', {
-			user_id: 1,
-			room_id: 'abcdefhijklmnopq'
-		});
-		$("#chatform").show();
-	});
-
-	$("#studentbtn").click(function () {
-		userType = 'student';
-		socket.emit('subscribe', {
-			user_id: 2,
-			room_id: 'abcdefhijklmnopq'
-		});
-		$("#chatform").show();
+	socket.on('newstudent', function (data) {
+		// New student connected
+		var chatBox = $('.ambassador-chat-template').clone();
+		chatBox.removeClass('ambassador-chat-template');
+		chatBox.removeClass('hide');
+		chatBox.attr('data-roomid', data.room_id);
+		$("#welcome-ambassador").append(chatBox);
 	});
 
 	$("#chatform").submit(function () {
@@ -46,13 +34,25 @@ $(function () {
 
 function initializeNewRoom(roomId, userId, collegeId)
 {
+	userType = 'STUDENT';
+
 	socket.emit('subscribe', {
 		user_id: userId,
 		room_id: roomId,
-		school_id: collegeId
+		college_id: collegeId
 	});
 	$("#chatform").show();
 	$("#loading").hide();
+}
+
+function ambassadorReportingForDuty(userId, collegeId)
+{
+	userType = 'AMBASSADOR';
+	
+	socket.emit('newambassador', {
+		user_id: userId,
+		college_id: collegeId
+	});
 }
 
 function createRoomId()

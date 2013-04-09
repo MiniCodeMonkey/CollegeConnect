@@ -28,7 +28,6 @@
 
 <!-- js -->
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-<script src="http://{{ $_SERVER['SERVER_NAME'] }}:1337/socket.io/socket.io.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 
@@ -36,6 +35,7 @@
 	<script src="/js/core.js"></script>
 @endif
 
-@if (Request::segment(1) == 'college')
+@if (Request::segment(1) == 'college' || (Auth::check() && Auth::user()->user_type == 'AMBASSADOR'))
+	<script src="http://{{ $_SERVER['SERVER_NAME'] }}:1337/socket.io/socket.io.js"></script>
 	<script src="/js/chat.js"></script>
 @endif

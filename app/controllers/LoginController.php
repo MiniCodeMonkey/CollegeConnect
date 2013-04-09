@@ -69,19 +69,22 @@ class LoginController extends BaseController {
 			//geocode
 
 			$facebook_id = $profile['id'];
-			$user_id = User::fromFacebookId($facebook_id);
+			$user = User::fromFacebookId($facebook_id);
 
 			//does college exist
 			$db_college = College::getByName($college);
 
 			if (!$db_college)
 			{
-				$new_college = new College;
-				$new_college->name = $college;
-				$new_college->save();
+				$db_college = new College;
+				$db_college->name = $college;
+				$db_college->save();
 			}
 
-			Auth::loginUsingId($user_id->id);
+			$user->college_id = $db_college->id;
+			$user->save();
+
+			Auth::loginUsingId($user->id);
 			return Redirect::to('/');
 
 		}

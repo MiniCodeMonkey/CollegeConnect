@@ -17,6 +17,11 @@ io.sockets.on('connection', function (socket) {
             from: data.user_id,
             message: 'Connected'
         });
+
+        socket.broadcast.to('college' + data.college_id).emit('newstudent', {
+            user_id: data.user_id,
+            room_id: data.room_id
+        });
     });
 
     socket.on('unsubscribe', function(data) {
@@ -33,5 +38,9 @@ io.sockets.on('connection', function (socket) {
             from: socket.user_id,
             message: data.message
         });
+    });
+
+    socket.on('newambassador', function (data) {
+        socket.join('college' + data.college_id);
     });
 });

@@ -11,6 +11,10 @@ class HomeController extends BaseController {
 
 			if ($user->user_type == 'AMBASSADOR')
 			{
+				if (is_null($user->college_id)) {
+					return Redirect::to('login');
+				}
+
 				return View::make('pages.ambassadors.index')
 					->with('user', $user);
 			}
