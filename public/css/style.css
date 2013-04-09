@@ -30,7 +30,18 @@ header 			{ background:#DC006B; height:100px; }
 
 /* HOME 
 ========================================================== */
-#map-canvas 	{ min-height:500px; position:relative; width:100%; }
+#welcome 					{ min-height:600px; position:relative; width:100%; }
+
+	/* welcome map
+	------------------------------ */
+	#map-canvas		 			{ min-height:500px; position:relative; width:100%; }
+
+	/* welcome hero
+	------------------------------ */
+	#welcome-msg 				{ position:absolute; z-index:9999; }
+	#welcome-msg h1 			{  }
+	#welcome-msg h2 			{  }
+	#welcome-msg p 				{  }
 
 /* SIGN UP 
 ========================================================== */
