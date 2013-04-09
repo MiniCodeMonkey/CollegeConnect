@@ -19,6 +19,7 @@ $(function () {
 		chatBox.removeClass('ambassador-chat-template');
 		chatBox.removeClass('hide');
 		chatBox.attr('data-roomid', data.room_id);
+		
 		$("#welcome-ambassador").append(chatBox);
 	});
 

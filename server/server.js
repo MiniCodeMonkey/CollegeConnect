@@ -41,6 +41,8 @@ io.sockets.on('connection', function (socket) {
     });
 
     socket.on('newambassador', function (data) {
+        console.log('Got new ambassador!', data);
+        
         socket.join('college' + data.college_id);
     });
 });
