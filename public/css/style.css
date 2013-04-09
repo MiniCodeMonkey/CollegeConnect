@@ -28,20 +28,25 @@ header 			{ background:#DC006B; height:100px; }
 /* FOOTER 
 ========================================================== */
 
+/* MAIN 
+========================================================== */
+#content 					{ padding-bottom:40px; padding-top:40px; }
+
 /* HOME 
 ========================================================== */
 #welcome 					{ min-height:600px; position:relative; width:100%; }
 
 	/* welcome map
 	------------------------------ */
-	#map-canvas		 			{ min-height:500px; position:relative; width:100%; }
+	#map-canvas		 		{ min-height:500px; position:relative; width:100%; }
+	.gmnoprint 				{ display:none; }
 
 	/* welcome hero
 	------------------------------ */
-	#welcome-msg 				{ position:absolute; z-index:9999; }
-	#welcome-msg h1 			{  }
-	#welcome-msg h2 			{  }
-	#welcome-msg p 				{  }
+	#welcome-msg 				{ left:140px; position:absolute; top:200px; z-index:9999; }
+	#welcome-msg h1 			{ color:#0E6CA3; }
+	#welcome-msg h2 			{ color:#FFF; }
+	#welcome-msg p 				{ color:#FFF; }
 
 /* SIGN UP 
 ========================================================== */
