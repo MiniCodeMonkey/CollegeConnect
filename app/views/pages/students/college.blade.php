@@ -49,8 +49,8 @@
 		<h4>{{ $college->name }}</h4>
 	</div>
 	<div id="college-pledge">
-		<a class="btn btn-large btn-block btn-warning" href="#">Pledge</a>
-		<a class="btn btn-small btn-block btn-info" href="#">Tell Your Friends</a>
+		<a class="btn btn-large btn-block btn-warning" href="#"><i class="icon-thumbs-up"></i> Pledge</a>
+		<a class="btn btn-small btn-block btn-info" href="#"><i class="icon-share-alt"></i> Tell Your Friends</a>
 	</div>
 </div>
 
