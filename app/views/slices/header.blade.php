@@ -1,4 +1,4 @@
-<a id="logo" class="pull-left" href="/"><i class="icon-exchange"></i> College Connect</a>
+<a id="logo" class="pull-left" href="/"><i class="icon-exchange"></i> College Ambassador</a>
 
 <nav id="main-nav" class="pull-right" role="nav">
 	<ul class="nav-pills">
