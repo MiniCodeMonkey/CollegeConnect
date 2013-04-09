@@ -42,7 +42,8 @@ $(function () {
 
 	$(".chatform").submit(function () {
 		socket.emit('sendmessage', {
-			message: $(this).find('input').val()
+			message: $(this).find('input').val(),
+			from: myId
 		});
 		$(this).find('input').val('');
 
