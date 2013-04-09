@@ -65,13 +65,21 @@ class LoginController extends BaseController {
 
 			$profile = $facebook->api('/me');
 			$facebook_id = $profile['id'];
+			$user_id = User::fromFacebookId($facebook_id);
 
-			//insert into database
+			//does college exist
+			$db_college = College::getByName($college);
 
-			//redirect to chat page
+			if (!$db_college)
+			{
+				$new_college = new College;
+				$new_college->name = $college;
+				$new_college->save();
+			}
 
+			Auth::loginUsingId($user_id->id);
+			return Redirect::to('/');
 
-			//boom!
 		}
 	
 	}
