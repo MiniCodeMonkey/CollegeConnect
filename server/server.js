@@ -35,14 +35,14 @@ io.sockets.on('connection', function (socket) {
 
     socket.on('sendmessage', function (data) {
         io.sockets.in(socket.room_id).emit('newmessage', {
-            from: socket.user_id,
+            from: data.from,
             message: data.message
         });
     });
 
     socket.on('newambassador', function (data) {
         console.log('Got new ambassador!', data);
-        
+
         socket.join('college' + data.college_id);
     });
 });

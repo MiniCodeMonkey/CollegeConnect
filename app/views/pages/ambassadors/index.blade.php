@@ -6,6 +6,10 @@
 		<h1>Welcome Ambassador! <small>Go forth and inform!</small></h1>
 	</div>
 
+	<div id="loading" class="text-center clearfix">
+		<i class="icon-spinner icon-spin"></i> Waiting for student to connect
+	</div>
+
 	<div id="ambassador-chat" class="row-fluid hide">
 		<div class="span6 chat-box">
 			<div class="chat-header">

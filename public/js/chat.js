@@ -1,6 +1,7 @@
 var socket = io.connect('http://'+ window.location.hostname +':1337');
 var inSession = false;
 var userType;
+var myId;
 
 $(function () {
 	socket.on('connect', function (data) {
@@ -11,12 +12,17 @@ $(function () {
 		if (!inSession) {
 			inSession = true;
 
+			$("#loading").hide();
+
 			// New student connected
 			$('#ambassador-chat').removeClass('hide');
 			$('#ambassador-chat').attr('data-roomid', data.room_id);
 		}
-		
-		var p = $('<p>').html(data.message);
+
+		var remote = (userType == 'AMBASSADOR') ? 'Student' : 'College Ambassador';
+		var name = (data.from == myId || typeof(data.from) == 'undefined') ? 'Me' : remote;
+		var p = $('<p>').html('<strong>'+ name +'</strong> ');
+		p.append(data.message);
 		$(".chat-messages").append(p);
 
 		console.log('newmessage', data);
@@ -26,6 +32,8 @@ $(function () {
 		if (!inSession) {
 			inSession = true;
 
+			$("#loading").hide();
+
 			// New student connected
 			$('#ambassador-chat').removeClass('hide');
 			$('#ambassador-chat').attr('data-roomid', data.room_id);
@@ -34,7 +42,8 @@ $(function () {
 
 	$(".chatform").submit(function () {
 		socket.emit('sendmessage', {
-			message: $(this).find('input').val()
+			message: $(this).find('input').val(),
+			from: myId
 		});
 		$(this).find('input').val('');
 
@@ -44,6 +53,8 @@ $(function () {
 
 function initializeNewRoom(roomId, userId, collegeId)
 {
+	myId = userId;
+
 	userType = 'STUDENT';
 
 	socket.emit('subscribe', {
@@ -57,6 +68,8 @@ function initializeNewRoom(roomId, userId, collegeId)
 
 function ambassadorReportingForDuty(userId, collegeId)
 {
+	myId = userId;
+
 	userType = 'AMBASSADOR';
 	
 	socket.emit('newambassador', {
