@@ -29,7 +29,12 @@ $(document).ready(function() {
             });
 
             google.maps.event.addListener(marker, 'click', function() {
-                infowindow.setContent('<h2>'+ college.name +'</h2>');
+                infowindow.setContent(
+                    '<h4>' + college.name + '</h4>' +
+                    '<p><a href="http://'+ college.website +'" class="btn">Go to website</a></p>' +
+                    '<p><a href="/college/'+ college.id +'" class="btn btn-primary"><span class="icon-exchange"></span> Talk to an ambassador</a></p>' +
+                    '<div class="clearfix"></div>'
+                );
                 infowindow.open(map, marker);
             });
         });
