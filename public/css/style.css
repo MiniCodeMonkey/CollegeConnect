@@ -46,10 +46,10 @@ header 					{ background:#16528E; height:100px; }
 
 	/* welcome hero
 	------------------------------ */
-	#welcome-msg 				{ left:140px; position:absolute; top:20%; z-index:9999; }
+	#welcome-msg 				{ left:140px; position:absolute; top:20%; width:25%; z-index:9999; }
 	#welcome-msg h1 			{ color:#DC006B; }
 	#welcome-msg h2 			{ color:#16528E; margin-bottom:30px; }
-	#welcome-msg p 				{ color:#FFF; font-size:18px; margin-bottom:30px; }
+	#welcome-msg p 				{ color:#FFF; font-size:18px; line-height:1.7; margin-bottom:30px; width:50%; }
 
 	#welcome-msg a 				{ display:block; font-size:24px; margin-bottom:30px; width:50%; }
 	#welcome-ambassador-link 	{ color:#FFF; font-size:14px; }
@@ -63,9 +63,18 @@ header 					{ background:#16528E; height:100px; }
 
 	#ambassador-loading 		{ display:block; font-size:80px; text-align:center; }
 
+/* STUDENTS
+========================================================== */
+#loading				{ font-size:24px; margin-bottom:20px; }
+
+	.college-box 				{ background:#FFF; border:1px solid #CCC; padding:20px 20px 0 20px;
+	border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; 
+	box-shadow:0 3px 0 #BBB; -moz-box-shadow:0 3px 0 #BBB; -webkit-box-shadow:0 3px 0 #BBB; }
+	.college-box img 			{ margin-right:10px; }
+
 /* CHAT
 ========================================================== */
-.chat-box 						{ background:#FFF; border:1px solid #CCC; padding:0 20px 0 20px;
+.chat-box						{ background:#FFF; border:1px solid #CCC; padding:0 20px 0 20px;
 	border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; 
 	box-shadow:0 3px 0 #BBB; -moz-box-shadow:0 3px 0 #BBB; -webkit-box-shadow:0 3px 0 #BBB; }
 	
@@ -78,7 +87,8 @@ header 					{ background:#16528E; height:100px; }
 	.my-bubble 					{ text-align:right; }
 		.my-bubble .face-bubble 		{ float:right; margin-left:10px; }
 
-	.chat-compose 				{ padding:5px; }
+	.chat-compose 				{ padding:10px 5px 5px 5px; }
+		.chat-compose button	{ margin-top:-11px; }
 
 #map-canvas img { 
   max-width: none;
