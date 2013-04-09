@@ -39,10 +39,24 @@ class LoginController extends BaseController {
 
 	public function getAmb()
 	{
+		return View::make('pages.login.register_ambassador');
+	}
 
-		echo 'test';
+	public function postAmb()
+	{
+		$rules = array(
+			'first_name' => array('required', 'alpha', 'max:255')
+		);
 
-
+		$validator = Validator::make(Input::all(), $rules);
+		
+		if ($validator->fails())
+		{
+			if (Request::ajax())
+				return Response::json($validator->messages());
+			else
+				return Redirect::to('login/amb')->withInput()->withErrors($validator);
+		}
 	}
 
 }
