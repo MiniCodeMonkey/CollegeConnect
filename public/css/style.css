@@ -47,8 +47,8 @@ header 					{ background:#16528E; height:100px; }
 	/* welcome hero
 	------------------------------ */
 	#welcome-msg 				{ left:140px; position:absolute; top:20%; z-index:9999; }
-	#welcome-msg h1 			{ color:#DC006B; font-size:30px; }
-	#welcome-msg h2 			{ color:#16528E; font-size:20px; margin-bottom:30px; }
+	#welcome-msg h1 			{ color:#DC006B; }
+	#welcome-msg h2 			{ color:#16528E; margin-bottom:30px; }
 	#welcome-msg p 				{ color:#FFF; font-size:18px; margin-bottom:30px; }
 
 	#welcome-msg a 				{ display:block; font-size:24px; margin-bottom:30px; width:50%; }
@@ -102,9 +102,10 @@ header 					{ background:#16528E; height:100px; }
 }*/
 
 /* Phone Landscape and Smaller */
-@media (max-width: 790px) {
+@media (max-width: 1370px) {
 	#welcome-msg 		{ top:20%; }
 	#welcome-msg h1 	{ font-size:30px; }
+	#welcome-msg h2		{ font-size:20px; }
 }
 
 /* Phone Portrait */
