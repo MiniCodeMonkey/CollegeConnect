@@ -1,4 +1,5 @@
 var map;
+var infowindow;
 
 $(document).ready(function() {
 
@@ -9,6 +10,8 @@ $(document).ready(function() {
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
         map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+        infowindow = new google.maps.InfoWindow();
     }
 
     google.maps.event.addDomListener(window, 'load', initialize);
@@ -22,7 +25,12 @@ $(document).ready(function() {
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(college.latitude, college.longitude),
                 map: map,
-                title: college.name,
+                title: college.name
+            });
+
+            google.maps.event.addListener(marker, 'click', function() {
+                infowindow.setContent('<h2>'+ college.name +'</h2>');
+                infowindow.open(map, marker);
             });
         });
     });
