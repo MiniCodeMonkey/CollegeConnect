@@ -24,11 +24,12 @@
 <link rel="stylesheet" href="/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/style.css">
 
-	<link rel='stylesheet'  href='http://fonts.googleapis.com/css?family=Sintony:400,700'>
+<link rel='stylesheet'  href='http://fonts.googleapis.com/css?family=Sintony:400,700'>
 
 <!-- js -->
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script src="http://{{ $_SERVER['SERVER_NAME'] }}:1337/socket.io/socket.io.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/core.js"></script>
-
-	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script src="/js/chat.js"></script>

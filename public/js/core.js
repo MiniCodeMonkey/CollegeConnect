@@ -22,7 +22,7 @@ $(document).ready(function() {
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(college.latitude, college.longitude),
                 map: map,
-                title: college.name
+                title: college.name,
             });
         });
     });
