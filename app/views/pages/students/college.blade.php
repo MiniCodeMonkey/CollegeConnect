@@ -41,32 +41,18 @@
 	</div>
 </div>
 
-<!--
 <div class="span6 college-box">
 	<div class="college-box-header">
 		<img class="pull-left img-polaroid" src="http://placekitten.com/40/40">
 	</div>
 	<div class="page-header">
-		<h4>Stanford University</h4>
+		<h4>{{ $college->name }}</h4>
 	</div>
-	<table class="table table-striped table-bordered">
-		<tbody>
-			<tr>
-				<td>Established</td>
-				<td>194 BC</td>
-			</tr>
-			<tr>
-				<td>Location</td>
-				<td>San Francisco, CA</td>
-			</tr>
-			<tr>
-				<td>Population</td>
-				<td>132432432</td>
-			</tr>
-		</tbody>
-	</table>
+	<div id="college-pledge">
+		<a class="btn btn-large btn-block btn-warning" href="#">Pledge</a>
+		<a class="btn btn-small btn-block btn-info" href="#">Tell Your Friends</a>
+	</div>
 </div>
--->
 
 </div>
 
