@@ -44,6 +44,35 @@ Route::filter('auth.basic', function()
 	return Auth::basic();
 });
 
+Route::filter('auth.fb', function()
+{
+	$facebook = new Facebook(array(
+	  'appId'  => Config::get('facebook.app_id'),
+	  'secret' => Config::get('facebook.app_secret'),
+	));
+
+	$user = $facebook->getUser();
+
+	if ($user) {
+		try {
+			$user_profile = $facebook->api('/me');
+
+			var_dump($user_profile);
+			exit;
+
+		} catch (FacebookApiException $e) {
+			error_log($e);
+			$user = FALSE;
+		}
+	}
+
+	if (!$user)
+	{
+		Redirect::route('login');
+	}
+
+});
+
 /*
 |--------------------------------------------------------------------------
 | Guest Filter
