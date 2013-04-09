@@ -1,10 +1,7 @@
 <?php
 
-	Route::get('/', function()
-	{
-		return View::make('pages.index');
-	});
-
+	Route::get('/', 'HomeController@showWelcome');
+	Route::controller('login');
 	
 
 // gitpush route for allowing automatic "git pull" on the server
