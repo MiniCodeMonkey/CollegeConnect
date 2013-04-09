@@ -27,4 +27,12 @@ class LoginController extends BaseController {
 		}
 	}
 
+	public function getAmb()
+	{
+
+		echo 'test';
+
+
+	}
+
 }
