@@ -16,6 +16,7 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
+// gitpush route for allowing automatic "git pull" on the server
 Route::any('gitpush', function()
 {
 	if (Input::get('token') != 'cG4mPcBh5uANgAxjwhAwkA9v') {
