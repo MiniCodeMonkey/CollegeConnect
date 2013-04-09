@@ -31,13 +31,44 @@ class LoginController extends BaseController {
 
 		// If user is ambassador, make sure that they have selected their college
 		if ($user->user_type == 'AMBASSADOR' && is_null($user->college_id)) {
-			return View::make('pages.login.register_ambassador')
-				->with('user_profile', $fbUserProfile);
+			return Redirect::to('/login/amb');
 		}
 
 		// We are authenticated!
 		Auth::loginUsingId($user->id);
 		return Redirect::to('/');
+	}
+
+	public function getAmb()
+	{
+		$user = Auth::user();
+		if ($user && $user->user_type == 'AMBASSADOR' && is_null($user->college_id)) {
+			return View::make('pages.login.register_ambassador');
+		} else {
+			return Redirect::to('/');
+		}
+	}
+
+	public function postAmb()
+	{
+		$user = Auth::user();
+		if ($user && $user->user_type == 'AMBASSADOR' && is_null($user->college_id)) {
+			$rules = array(
+				'first_name' => array('required', 'alpha', 'max:255')
+			);
+
+			$validator = Validator::make(Input::all(), $rules);
+			
+			if ($validator->fails())
+			{
+				if (Request::ajax())
+					return Response::json($validator->messages());
+				else
+					return Redirect::to('login/amb')->withInput()->withErrors($validator);
+			}
+		} else {
+			return Redirect::to('/');
+		}
 	}
 
 	/**
