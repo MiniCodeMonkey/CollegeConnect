@@ -64,6 +64,10 @@ class LoginController extends BaseController {
 			));
 
 			$profile = $facebook->api('/me');
+
+
+			//geocode
+
 			$facebook_id = $profile['id'];
 			$user_id = User::fromFacebookId($facebook_id);
 
