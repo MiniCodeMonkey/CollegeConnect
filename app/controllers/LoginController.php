@@ -59,6 +59,7 @@ class LoginController extends BaseController {
 			else
 				return Redirect::to('login/amb')->withInput()->withErrors($validator);
 		}
+	}
 
 	public function getLogout()
 	{
