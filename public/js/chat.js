@@ -1,6 +1,7 @@
 var socket = io.connect('http://'+ window.location.hostname +':1337');
 var inSession = false;
 var userType;
+var myId;
 
 $(function () {
 	socket.on('connect', function (data) {
@@ -11,12 +12,17 @@ $(function () {
 		if (!inSession) {
 			inSession = true;
 
+			$("#loading").hide();
+
 			// New student connected
 			$('#ambassador-chat').removeClass('hide');
 			$('#ambassador-chat').attr('data-roomid', data.room_id);
 		}
-		
-		var p = $('<p>').html(data.message);
+
+		var remote = (userType == 'AMBASSADOR') ? 'Student' : 'College Ambassador';
+		var name = (data.user_id == myId) ? 'Me' : remote;
+		var p = $('<p>').html('<strong>'+ name +'</strong> ');
+		p.append(data.message);
 		$(".chat-messages").append(p);
 
 		console.log('newmessage', data);
@@ -25,6 +31,8 @@ $(function () {
 	socket.on('newstudent', function (data) {
 		if (!inSession) {
 			inSession = true;
+			
+			$("#loading").hide();
 
 			// New student connected
 			$('#ambassador-chat').removeClass('hide');
@@ -44,6 +52,8 @@ $(function () {
 
 function initializeNewRoom(roomId, userId, collegeId)
 {
+	myId = userId;
+
 	userType = 'STUDENT';
 
 	socket.emit('subscribe', {
@@ -57,6 +67,8 @@ function initializeNewRoom(roomId, userId, collegeId)
 
 function ambassadorReportingForDuty(userId, collegeId)
 {
+	myId = userId;
+
 	userType = 'AMBASSADOR';
 	
 	socket.emit('newambassador', {
