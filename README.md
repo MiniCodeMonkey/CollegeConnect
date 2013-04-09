@@ -31,6 +31,7 @@ A Vagrantfile is included for local development, to get started developing local
 When the Vagrant VM is first started, it is necessary to log in and install/update the composer dependencies.
 
 	$ vagrant ssh
+	$ cd public
     $ composer install
 
 
