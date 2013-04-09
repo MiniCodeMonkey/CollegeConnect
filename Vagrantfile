@@ -32,7 +32,7 @@ Vagrant::Config.run do |config|
 
   # Set share folder
   use_nfs = !Kernel.is_windows?
-  config.vm.share_folder "public" , "/home/vagrant/public", "./public/", :nfs => use_nfs
+  config.vm.share_folder "public" , "/home/vagrant/public", "./", :nfs => use_nfs
 
   # Enable and configure chef solo
   config.vm.provision :chef_solo do |chef|

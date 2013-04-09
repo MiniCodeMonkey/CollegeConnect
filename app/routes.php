@@ -18,6 +18,11 @@ Route::get('/', function()
 
 Route::get('/gitpush', function()
 {
+	if (Input::get('token') != 'cG4mPcBh5uANgAxjwhAwkA9v') {
+		Log::error('Invalid access token for gitpush');
+		return Response::make('Invalid access token', 403);
+	}
+
 	$outfile = tempnam(".", "cmd");
     $errfile = tempnam(".", "cmd");
     $descriptorspec = array(
@@ -25,7 +30,7 @@ Route::get('/gitpush', function()
         1 => array("file", $outfile, "w"),
         2 => array("file", $errfile, "w")
     );
-    $proc = proc_open("/bin/bash /home/codemonkey/collegeconnect-push.sh", $descriptorspec, $pipes);
+    $proc = proc_open("sudo -u codemonkey /bin/bash /home/codemonkey/collegeconnect-push.sh", $descriptorspec, $pipes);
 
     if (is_resource($proc))
     {
@@ -39,9 +44,13 @@ Route::get('/gitpush', function()
 	    unlink($errfile);
 
 		Log::info(print_r($stdout, true) . PHP_EOL . print_r($stderr, true));
+		
+		return Response::make('OK');
 	}
 	else
 	{
 		Log::error('Could not open process for gitpush');
+		
+		return Response::make('Server error', 500);
 	}
 });
