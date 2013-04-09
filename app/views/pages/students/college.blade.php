@@ -10,11 +10,6 @@
 	<i class="icon-spinner icon-spin"></i> Connecting with a college ambassador
 </div>
 
-<form action="sendmessage" id="chatform" class="clearfix" method="post" accept-charset="utf-8" style="display: none">
-	<div id="chatlog"></div>
-	<input type="text" id="chattext" />
-	<input type="submit" value="Send" />
-</form>
 <div class="row-fluid">
 <div class="span6 chat-box">
 	<div class="chat-header">

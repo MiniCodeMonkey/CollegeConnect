@@ -21,6 +21,15 @@ $(function () {
 			// New student connected
 			$('#ambassador-chat').removeClass('hide');
 			$('#ambassador-chat').attr('data-roomid', data.room_id);
+
+			$(".chatform .btn").click(function () {
+				socket.emit('sendmessage', {
+					message: $(this).parent().find('input').val()
+				});
+				$(this).parent().find('input').val('');
+
+				return false;
+			});
 		}
 	});
 
