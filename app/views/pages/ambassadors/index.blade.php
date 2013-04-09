@@ -6,7 +6,7 @@
 		<h1>Welcome Ambassador! <small>Go forth and inform!</small></h1>
 	</div>
 
-	<div id="ambassador-chat" class="row-fluid ambassador-chat-template hide">
+	<div id="ambassador-chat" class="row-fluid hide">
 		<div class="span6 chat-box">
 			<div class="chat-header">
 				<h3>Nicholas Cerminara</h3>

@@ -1,4 +1,5 @@
 var socket = io.connect('http://'+ window.location.hostname +':1337');
+var inSession = false;
 var userType;
 
 $(function () {
@@ -14,13 +15,13 @@ $(function () {
 	});
 
 	socket.on('newstudent', function (data) {
-		// New student connected
-		var chatBox = $('.ambassador-chat-template').clone();
-		chatBox.removeClass('ambassador-chat-template');
-		chatBox.removeClass('hide');
-		chatBox.attr('data-roomid', data.room_id);
+		if (!inSession) {
+			inSession = true;
 
-		$("#welcome-ambassador").append(chatBox);
+			// New student connected
+			$('#ambassador-chat').removeClass('hide');
+			$('#ambassador-chat').attr('data-roomid', data.room_id);
+		}
 	});
 
 	$(".chatform").submit(function () {
