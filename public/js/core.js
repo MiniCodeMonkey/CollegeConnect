@@ -31,8 +31,10 @@ $(document).ready(function() {
             google.maps.event.addListener(marker, 'click', function() {
                 infowindow.setContent(
                     '<h4>' + college.name + '</h4>' +
-                    '<p><a href="http://'+ college.website +'" class="btn">Go to website</a></p>' +
+                    '<p><span class="icon-signal"></span> '+ college.graduation_rate +'</p>' +
+                    '<p><span class="icon-group"></span> '+ college.student_population +'</p>' +
                     '<p><a href="/college/'+ college.id +'" class="btn btn-primary"><span class="icon-exchange"></span> Talk to an ambassador</a></p>' +
+                    '<p><a href="http://'+ college.website +'" class="btn"><span class="icon-heart"></span> Go to website</a></p>' +
                     '<div class="clearfix"></div>'
                 );
                 infowindow.open(map, marker);

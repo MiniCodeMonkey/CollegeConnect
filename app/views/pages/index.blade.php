@@ -11,6 +11,8 @@
 		
 		<a class="btn btn-large btn-primary" href="{{ URL::to('/register/student') }}">Start Talking to an Ambassador</a>
 		<a id="welcome-ambassador-link" href="{{ URL::to('/register/ambassador') }}">Be an Ambassador</a>
+
+		<p class="muted">Some data provided by National Center for Education Statistics</p>
 	</div>	
 </div>
 @stop
