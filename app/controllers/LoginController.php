@@ -25,6 +25,8 @@ class LoginController extends BaseController {
 			$user->fb_accesstoken = $facebook->getAccessToken();
 			$user->user_type = Session::get('user_type', 'STUDENT');
 			$user->save();
+
+			Session::forget('user_type');
 		}
 
 		if ($user->user_type == 'AMBASSADOR' && is_null($user->college_id)) {
@@ -34,6 +36,12 @@ class LoginController extends BaseController {
 
 		// We are authenticated!
 		Auth::loginUsingId($user->id);
+		return Redirect::to('/');
+	}
+
+	public function getLogout()
+	{
+		Auth::logout();
 		return Redirect::to('/');
 	}
 
