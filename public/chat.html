@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="http://collegeconnect.local:1337/socket.io/socket.io.js"></script>
+	<script src="/js/chat.js"></script>
+</head>
+<body>
+	<button id="ambassadorbtn">I am an Ambassador</button>
+	<button id="studentbtn">I am a Student</button>
+
+	<form action="sendmessage" id="chatform" method="post" accept-charset="utf-8">
+		<div id="chatlog"></div>
+		<input type="text" id="chattext" />
+		<input type="submit" value="Send" />
+	</form>
+</body>
+</html>
