@@ -1,8 +1,7 @@
 <?php
 
 	Route::get('/', 'HomeController@showWelcome');
-	Route::controller('login');
-	
+	Route::controller('login', 'LoginController');	
 
 // gitpush route for allowing automatic "git pull" on the server
 Route::any('gitpush', function()
