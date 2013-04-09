@@ -9,6 +9,9 @@
 	<div id="ambassador-chat" class="row-fluid">
 
 		<div class="span6 chat-box">
+			<div class="chat-header">
+				<h3>Nicholas Cerminara</h3>
+			</div>
 			<div class="chat-messages clearfix">
 				<div class="chat-bubble other-bubble clearfix">
 					<div class="face-bubble">
@@ -29,17 +32,20 @@
 			</div>
 			<div class="chat-compose">
 				<form class="horizontal">
-					<input type="text">
+					<input type="text" class="input-large">
 					<button type="submit" class="btn">Send</button>
 				</form>
 			</div>
 		</div>
 
 		<div class="span6 chat-box">
+			<div class="chat-header">
+				<h3>Nicholas Cerminara</h3>
+			</div>
 			<div class="chat-messages clearfix">
 				<div class="other-bubble">
 					<div class="face-bubble">
-						<img class="img-circle" src="http://lorempixel.com/100/100">
+						<img class="img-circle" src="http://lorempixel.com/40/40">
 					</div>
 					<div class="chat-message">
 						<p>Look at me i am stuff</p>
@@ -47,7 +53,7 @@
 				</div>
 				<div class="my-bubble">
 					<div class="face-bubble">
-						<img class="img-circle" src="http://lorempixel.com/100/100">
+						<img class="img-circle" src="http://lorempixel.com/40/40">
 					</div>
 					<div class="chat-message">
 						<p>Look at me i am stuff</p>

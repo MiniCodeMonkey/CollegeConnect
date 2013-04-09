@@ -15,7 +15,7 @@ header 					{ background:#16528E; height:100px; }
 	
 	/* logo
 	------------------------------ */
-	#logo				{ color:#FFF; font-family:'Sintony'; font-size:70px; padding-top:13px; }
+	#logo				{ color:#FFF; font-family:'Sintony'; font-size:50px; padding-top:20px; }
 	#logo i 			{ color:#04305C; text-shadow:0 1px 0 #3184D6; }
 	#logo:hover			{ text-decoration:none; }
 
@@ -65,10 +65,11 @@ header 					{ background:#16528E; height:100px; }
 
 /* CHAT
 ========================================================== */
-.chat-box 						{ background:#FFF; border:1px solid #CCC; padding:20px 20px 0 20px;
+.chat-box 						{ background:#FFF; border:1px solid #CCC; padding:0 20px 0 20px;
 	border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; 
 	box-shadow:0 3px 0 #BBB; -moz-box-shadow:0 3px 0 #BBB; -webkit-box-shadow:0 3px 0 #BBB; }
 	
+	.chat-header h3 			{ color:#DC006B; }
 	.chat-messages 				{ border-bottom:1px solid #CCC; padding:20px; }
 		.chat-bubble 			{ margin-bottom:10px; }
 		.chat-message 			{ padding-top:5px; }
