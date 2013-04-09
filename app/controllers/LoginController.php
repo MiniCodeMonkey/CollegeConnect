@@ -31,6 +31,10 @@ class LoginController extends BaseController {
 			return View::make('pages.login.register_ambassador')
 				->with('user_profile', $fbUserProfile);
 		}
+
+		// We are authenticated!
+		Auth::loginUsingId($user->id);
+		return Redirect::to('/');
 	}
 
 }
