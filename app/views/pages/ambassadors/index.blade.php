@@ -30,7 +30,7 @@
 				</div>
 			</div>
 			<div class="chat-compose">
-				<form class="horizontal">
+				<form class="horizontal" class="chatform">
 					<input type="text" class="input-large">
 					<button type="submit" class="btn">Send</button>
 				</form>

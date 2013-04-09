@@ -19,15 +19,15 @@ $(function () {
 		chatBox.removeClass('ambassador-chat-template');
 		chatBox.removeClass('hide');
 		chatBox.attr('data-roomid', data.room_id);
-		
+
 		$("#welcome-ambassador").append(chatBox);
 	});
 
-	$("#chatform").submit(function () {
+	$(".chatform").submit(function () {
 		socket.emit('sendmessage', {
-			message: $('#chattext').val()
+			message: $(this).find('input').val()
 		});
-		$('#chattext').val('');
+		$(this).find('input').val('');
 
 		return false;
 	});

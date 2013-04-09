@@ -21,7 +21,7 @@
 		<h3>Nicholas Cerminara</h3>
 	</div>
 	<div class="chat-messages clearfix">
-		<div class="chat-bubble other-bubble clearfix">
+		<!--<div class="chat-bubble other-bubble clearfix">
 			<div class="face-bubble">
 				<img class="img-circle" src="http://lorempixel.com/40/40">
 			</div>
@@ -36,16 +36,17 @@
 			<div class="chat-message">
 				<p>Look at me i am stuff</p>
 			</div>
-		</div>
+		</div>-->
 	</div>
 	<div class="chat-compose">
-		<form class="horizontal">
+		<form class="horizontal" class="chatform">
 			<input type="text" class="input-large">
 			<button type="submit" class="btn">Send</button>
 		</form>
 	</div>
 </div>
 
+<!--
 <div class="span6 college-box">
 	<div class="college-box-header">
 		<img class="pull-left img-polaroid" src="http://placekitten.com/40/40">
@@ -70,6 +71,8 @@
 		</tbody>
 	</table>
 </div>
+-->
+
 </div>
 
 <script language="javascript">
