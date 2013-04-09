@@ -9,4 +9,4 @@
 
 
 
-<a href="{{ $url }}">My URL</a>
+<a href="#">My URL</a>
