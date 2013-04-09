@@ -1,7 +1,6 @@
 @extends('layouts/subpage')
 
 @section('content')
-    
 
 	<h1>Welcome College Ambassador {{ $user->name }}!</h1>
 	<h3>Which school would you like to be an Ambassador for?</h3>
