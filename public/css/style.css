@@ -1,16 +1,18 @@
 
 /* Colors
 	Coral 	: #DC006B;
+	Green 	: #00CC00;
+	Blue 	: #16528E;
 */
 
 /* BASE 
 ========================================================== */
-header 			{ background:#DC006B; height:100px; }
+header 			{ background:#16528E; height:100px; }
 	
 	/* logo
 	------------------------------ */
 	#logo				{ color:#FFF; font-family:'Sintony'; font-size:70px; padding-top:13px; }
-	#logo i 			{ color:#750039; text-shadow:0 1px 0 #FF52A6; }
+	#logo i 			{ color:#04305C; text-shadow:0 1px 0 #3184D6; }
 	#logo:hover			{ text-decoration:none; }
 
 	/* main nav
@@ -43,10 +45,12 @@ header 			{ background:#DC006B; height:100px; }
 
 	/* welcome hero
 	------------------------------ */
-	#welcome-msg 				{ left:140px; position:absolute; top:200px; z-index:9999; }
-	#welcome-msg h1 			{ color:#0E6CA3; }
+	#welcome-msg 				{ left:140px; position:absolute; top:300px; z-index:9999; }
+	#welcome-msg h1 			{ color:#DC006B; font-size:50px; }
 	#welcome-msg h2 			{ color:#FFF; }
 	#welcome-msg p 				{ color:#FFF; }
+
+	#welcome-msg a 				{ display:block; margin-bottom:30px; }
 
 /* SIGN UP 
 ========================================================== */

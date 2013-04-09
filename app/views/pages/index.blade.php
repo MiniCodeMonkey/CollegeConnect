@@ -6,7 +6,10 @@
 	<div id="welcome-msg">
 		<h1>Connect with College Ambassadors</h1>
 		<h2>Your school. Your ambassadors.</h2>
-		<p>this is small tagline to teach you something about something</p>	
+		<p>Find your college and get familiar by talking to its ambassadors.</p>	
+		<p>They'll help with your college planning, questions, and greatest fears.</p>
+		<a class="btn btn-large clearfix" href="#">Start Talking to an Ambassador</a>
+		<a class="btn btn-small clearfix" href="#">Be an Ambassador</a>
 	</div>	
 </div>
 @stop
