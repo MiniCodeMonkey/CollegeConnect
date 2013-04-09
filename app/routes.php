@@ -5,6 +5,9 @@ Route::get('/', 'HomeController@showWelcome');
 // Login controller
 Route::controller('login', 'LoginController');
 
+// Register controller
+Route::controller('register', 'RegisterController');
+
 // Logout
 Route::get('/logout', 'LoginController@getLogout');
 
