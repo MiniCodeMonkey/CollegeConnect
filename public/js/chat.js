@@ -2,11 +2,11 @@ var socket;
 var userType;
 
 $(function () {
-	$("#ambassadorbtn").hide();
+	/*$("#ambassadorbtn").hide();
 	$("#studentbtn").hide();
 	$("#chatform").hide();
 
-	socket  = io.connect('http://'+ window.location.hostname +':1337');
+	socket = io.connect('http://'+ window.location.hostname +':1337');
 	socket.on('connect', function (data) {
 		$("#ambassadorbtn").show();
 		$("#studentbtn").show();
@@ -46,5 +46,5 @@ $(function () {
 		$('#chattext').val('');
 
 		return false;
-	});
+	});*/
 });
