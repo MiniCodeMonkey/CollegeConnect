@@ -16,7 +16,7 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
-Route::get('/gitpush', function()
+Route::any('gitpush', function()
 {
 	if (Input::get('token') != 'cG4mPcBh5uANgAxjwhAwkA9v') {
 		Log::error('Invalid access token for gitpush');
