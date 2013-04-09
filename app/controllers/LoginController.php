@@ -29,6 +29,7 @@ class LoginController extends BaseController {
 			Session::forget('user_type');
 		}
 
+		// If user is ambassador, make sure that they have selected their college
 		if ($user->user_type == 'AMBASSADOR' && is_null($user->college_id)) {
 			return View::make('pages.login.register_ambassador')
 				->with('user_profile', $fbUserProfile);
@@ -39,6 +40,9 @@ class LoginController extends BaseController {
 		return Redirect::to('/');
 	}
 
+	/**
+	 * Log out
+	 */
 	public function getLogout()
 	{
 		Auth::logout();
